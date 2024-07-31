@@ -45,7 +45,7 @@ def getMessage():
 def webhook():
     bot = init_bot()
     bot.remove_webhook()
-    bot.set_webhook(url='https://flaskbot-eosin.vercel.app/' + TOKEN)
+    bot.set_webhook(url='https://flaskvpu29lvivbot-git-main-intserhiys-projects.vercel.app/' + TOKEN)
     # bot.set_webhook(url='https://1d75-31-148-51-243.ngrok-free.a
     #
     #
