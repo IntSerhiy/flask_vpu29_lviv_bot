@@ -2,7 +2,7 @@ from flask import Flask, request
 
 import telebot
 
-from flask_openai_bot.service.main import generetive_message
+from service.main import generetive_message
 
 app = Flask(__name__)
 

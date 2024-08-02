@@ -3,7 +3,7 @@ from pinecone import Pinecone, ServerlessSpec
 
 CLIENT = OpenAI(api_key="sk-proj-mmRKHjeDcfL9vQxDezi4T3BlbkFJKXL7oAEiuxFsU8ZC9xVs")
 pc = Pinecone(api_key="30f3efb4-4c57-40c4-bdfc-c2b6a4f52635")
-index = pc.Index('lvivcroissant')
+index = pc.Index('vpu29lviv')
 
 
 def split(text: str):
