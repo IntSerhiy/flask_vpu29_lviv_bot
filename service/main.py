@@ -3,6 +3,7 @@ import requests
 from openai import OpenAI
 
 from service.chat_history import (init_chat_history, get_chat_history, append_chat_history)
+from service.contextualizer import get_context_message
 from service.rag_helper import search
 
 CLIENT = OpenAI(api_key="sk-proj-mmRKHjeDcfL9vQxDezi4T3BlbkFJKXL7oAEiuxFsU8ZC9xVs")
@@ -183,12 +184,13 @@ def call_function(function_name, arguments, id):
     }
 
 def generetive_message(message, chat_id):
-    chat_history =  get_chat_history(chat_id)
+    chat_history = get_chat_history(chat_id)
     print(chat_history)
     if chat_history == None:
         chat_history = init(chat_id)
     chat_history = append_chat_history(chat_id, user_input(message))
-    chat_history[0]['content'] += get_external_knowledge(message)
+    context_message = get_context_message(chat_history)
+    chat_history[0]['content'] += get_external_knowledge(context_message)
     return call_gpt(chat_history, chat_id)
 
 def get_external_knowledge(message):

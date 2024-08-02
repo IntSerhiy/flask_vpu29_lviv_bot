@@ -55,3 +55,4 @@ def append_chat_history(chat_id, message):
         headers={'api-key': 'R5PeVST4qP0xcGmWYFmWlWC4m5Ofy4eD3IoHf7gk5SVAHPihj1hF1H1NB1M5nHqk'},
     )
     return get_chat_history(chat_id)
+
